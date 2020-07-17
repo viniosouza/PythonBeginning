@@ -8,8 +8,9 @@ numero_secreto = randint(0, 30)
 total_de_tentativas = 3
 rodada = 1
 
-
-while (rodada <= total_de_tentativas):
+# Colocamos o for ao invés de while, o while deixa o código verboso
+# E se esquecemos de colocar rodada	(	rodada	=	rodada	+	1	)	e	nosso	código	entrar	em	um	loop	infinito.
+for rodada in range(1, total_de_tentativas + 1):
     print('Tentativa {} de {}'.format(rodada, total_de_tentativas))
     chute = int(input('Insira um número de 0-100: '))
     print('Você digitou: ', chute)
@@ -27,5 +28,4 @@ while (rodada <= total_de_tentativas):
     elif(menor):
         print('Você errou! O seu chute foi menor que o número secreto, o número correto é o {}'.format(
             numero_secreto))
-    rodada = rodada + 1
 print('Fim do jogo')
